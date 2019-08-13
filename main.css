@@ -1,0 +1,38 @@
+:root {
+ --main-bg-color: #EDC7B7
+}
+
+body {
+    background-color: var(--main-bg-color)
+}
+
+.outer-grid {
+ display: grid;
+
+
+}
+.song-grid {
+    display: grid;
+
+}
+.song {
+    height: 100px;
+    width: 100px
+
+}
+
+.song > div:nth-child(1n) {
+  background-color: #96ceb4;
+}
+
+.song > div:nth-child(3n) {
+  background-color: #88d8b0;
+}
+
+.song > div:nth-child(2n) {
+  background-color: #ff6f69;
+}
+
+.song > div:nth-child(4n) {
+  background-color: #ffcc5c;
+}
