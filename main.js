@@ -1,5 +1,5 @@
 let this_is_a_way = "Away We Happened. Who could forget. Even though this was released in 2012. Our friendship was ignited from the sparks of WongFu and a very very enjoyable Geo Project.";
-let missing_piece = "Also featured in Away We Happened. This is by far my favorite song, but I know you prefer 'by my side' Grrr";
+let missing_piece = "Also featured in Away We Happened. This is by far my favorite song, but I know 'By My Side' is your more preferred David Choi song.";
 let michael_buble = "This was your favourite song in year 10. Maybe it still is? All I know is that it’s still one of your top favourites, so this was brought up in one of our earlier conversations. In that very same conversation. Haven’t met you met was also mentioned and sung.";
 let by_my_side = "Mid year 10. Do you like missing piece more or By My Side?"
 let bygone_years = "Friendship and nostalgia and romance and tears all bundled in a neat two hour package. This gem appeared was excavated near the end of year 10 and at the beginning of PP, remember that?"
@@ -36,20 +36,24 @@ const songs = {
 }
 
 
-
+const load_screen = document.querySelector('.load-screen');
+const birthday_text = document.querySelector('.birthday-text');
 const description_box = document.querySelector('.description-box');
 const back_button = document.querySelector('.back-button');
 let song_btns = document.querySelectorAll('.song')
 song_btns = [...song_btns]
+let new_p = ''
+
+
+birthday_text.classList.toggle('show');
 
 song_btns.forEach((btn)=> {
     btn.addEventListener('click', (e)=>{
         song_title = e.target.className.split(' ')[1];
         console.log(song_title)
         message = songs[song_title]
-        let new_p = document.createElement("p")
+         new_p = document.querySelector('.description-box p')
         new_p.textContent = songs[song_title]
-        description_box.appendChild(new_p)
         description_box.classList.toggle('show')
         back_button.classList.toggle('show')
         new_p.classList.toggle('description-text')
@@ -58,5 +62,6 @@ song_btns.forEach((btn)=> {
 
 back_button.addEventListener('click', (e)=>{
     description_box.classList.toggle('show')
+    new_p.classList.toggle('description-text')
     back_button.classList.toggle('show')
 })
