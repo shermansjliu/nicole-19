@@ -26,8 +26,6 @@ const songs = {
     have_not_met_you: have_not_met_you,
     by_my_side: by_my_side,
     those_bygone_years: bygone_years,
-
-
 }
 
 
@@ -49,4 +47,9 @@ song_btns.forEach((btn)=> {
         back_button.classList.toggle('show')
         new_p.classList.toggle('description-text')
     })
+})
+
+back_button.addEventListener('click', (e)=>{
+    description_box.classList.toggle('show')
+    back_button.classList.toggle('show')
 })
