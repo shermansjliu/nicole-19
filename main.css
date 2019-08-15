@@ -73,38 +73,53 @@ body {
     /* Insert chosen google font */
     height: 100%;
     width: 100%;
-    background-color: black;
     z-index: -999;
     opacity: 0;
     position: absolute;
 }
-.back-button {
-    background-color: var(--accent-color);
-    height: 100px;
-    width: 200px;
-    margin: 2% 0 0 2%;
-    opacity: 0;
-    position: relative;
-}
-
-.back-button:hover{
-    opacity: 0.5;
-}
-.description-text{
-    font-size: 1.5rem;
-    margin-top: 30%;
-    margin-left: 5%;
-    overflow-wrap: inherit;
-    height: inherit;
-    width: 90%;
+.description-box h1 {
+    text-align: center;
     color: white;
 }
+
+.description-text{
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5rem;
+    margin-top: 10%;
+    text-align: justify;
+    line-height: 30px;
+    width: 50%;
+    margin-left: 25%;
+    color: white;
+}
+
+.back-button {
+    height: 50px;
+    width: 50px;
+    margin: 5% 0 0 10%;
+    opacity: 0;
+    transform: translate(0px);
+
+}
+
+.icon {
+    height: inherit;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+}
+.icon:hover{
+    transform: translate(-50px, 0px);
+    transition: transform 0.5s ease-out;
+}
+
 .loaded {
     z-index: 998;
     opacity: 1;
     transition: opacity 2s ease;
 }
-
 
 .song-grid {
     display: grid;
@@ -177,7 +192,6 @@ body {
     color: white;
     height: 100%;
     width:100%;
-    left: 10px;
     line-height: 28px;
     text-align: center;
     text-transform: uppercase;
@@ -191,4 +205,13 @@ body {
     opacity: 1;
     transform: translate(0, 50px);
     transition: transform .5s ease, opacity .5s ease;
+}
+
+.credit {
+    position: relative;
+    display: block;
+    top: 200px;
+    width: 100%;
+    text-align: center;
+
 }
