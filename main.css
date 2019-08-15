@@ -189,13 +189,14 @@ body {
     position: absolute;
     color: white;
     height: 100%;
-    width:100%;
+
+    width:95%;
     line-height: 28px;
     text-align: center;
     text-transform: uppercase;
     transform: translate(0, 200px);
     z-index: 999;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: transform .5s ease, opacity .5s ease;
 }
 
