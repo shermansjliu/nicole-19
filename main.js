@@ -1,7 +1,7 @@
 let this_is_a_way = "Away We Happened. Who could forget. Even though this was released in 2012. Our friendship was ignited from the sparks of WongFu and a very very enjoyable Geo Project.";
 let missing_piece = "Also featured in Away We Happened. This is by far my favorite song, but I know 'By My Side' is your more preferred David Choi song.";
 let michael_buble = "This was your favourite song in year 10. Maybe it still is? All I know is that it’s still one of your top favourites, so this was brought up in one of our earlier conversations. In that very same conversation. Haven’t met you met was also mentioned and sung.";
-let by_my_side = "Mid year 10. Do you like missing piece more or By My Side?"
+let by_my_side = "Discovered @ Mid year 10. I know you like ‘By my side’ over Missing piece, but I personally like Missing Piece more because it’s just…better… right? :)"
 let bygone_years = "Friendship and nostalgia and romance and tears all bundled in a neat two hour package. This gem appeared was excavated near the end of year 10 and at the beginning of PP, remember that?"
 let thinking_about_you = "I can’t pin point the exact date on this, but I’m sure we brought it up in a convo fingerling about the one and only, David Choi"
 let wang_leehom = "You recommended these songs in a cs class I thiiink? I’ve listened to them a bajillion times ever since";
@@ -38,30 +38,62 @@ const songs = {
 
 const load_screen = document.querySelector('.load-screen');
 const birthday_text = document.querySelector('.birthday-text');
+const song_grid = document.querySelector('.song-grid')
 const description_box = document.querySelector('.description-box');
 const back_button = document.querySelector('.back-button');
-let song_btns = document.querySelectorAll('.song')
+let song_btns = document.querySelectorAll('.song-title')
 song_btns = [...song_btns]
 let new_p = ''
 
 
-birthday_text.classList.toggle('show');
+
+// setTimeout(function(){
+//     birthday_text.classList.toggle('loaded');
+// }, 500);
+//
+// birthday_text.addEventListener('click', ()=>{
+//     birthday_text.classList.toggle('loaded');
+//     load_screen.classList.toggle('loaded');
+// });
+
+song_grid.classList.toggle('show')
 
 song_btns.forEach((btn)=> {
     btn.addEventListener('click', (e)=>{
-        song_title = e.target.className.split(' ')[1];
-        console.log(song_title)
+        if (e.target.classList[0] == 'song-overlay'){
+            song_title = e.path[1].className.split(' ')[1];
+        }else{
+            song_title = e.path[2].className.split(' ')[1];
+        }
+
         message = songs[song_title]
          new_p = document.querySelector('.description-box p')
         new_p.textContent = songs[song_title]
         description_box.classList.toggle('show')
         back_button.classList.toggle('show')
         new_p.classList.toggle('description-text')
+        song_grid.classList.toggle('show')
     })
 })
+
+    function toggle_overlay (e) {
+        let overlay_text = e.target.children[0];
+        overlay_text.classList.toggle('overlay-text-show')
+    }
+    let song_overlay = document.querySelectorAll('.song-overlay');
+    song_overlay = [...song_overlay]
+    song_overlay.forEach((overlay)=> {
+        overlay.addEventListener('mouseenter', (e)=> {
+            toggle_overlay(e);
+        })
+        overlay.addEventListener('mouseleave', (e)=> {
+            toggle_overlay(e);
+        })
+    })
 
 back_button.addEventListener('click', (e)=>{
     description_box.classList.toggle('show')
     new_p.classList.toggle('description-text')
     back_button.classList.toggle('show')
+    song_grid.classList.toggle('show')
 })
