@@ -48,14 +48,14 @@ let new_p = ''
 let title_box = ''
 
 
-// setTimeout(function(){
-//     birthday_text.classList.toggle('loaded');
-// }, 500);
-//
-// birthday_text.addEventListener('click', ()=>{
-//     birthday_text.classList.toggle('loaded');
-//     load_screen.classList.toggle('loaded');
-// });
+setTimeout(function(){
+    birthday_text.classList.toggle('loaded');
+}, 500);
+
+birthday_text.addEventListener('click', ()=>{
+    birthday_text.classList.toggle('loaded');
+    load_screen.classList.toggle('loaded');
+});
 
 song_grid.classList.toggle('show')
 
