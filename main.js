@@ -48,6 +48,7 @@ let new_p = ''
 let title_box = ''
 
 
+
 setTimeout(function(){
     birthday_text.classList.toggle('loaded');
 }, 500);
